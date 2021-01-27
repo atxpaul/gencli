@@ -1,0 +1,25 @@
+{
+    "name": "gencli",
+    "description": "A CLI for generate CLIs",
+    "version": "0.0.1",
+    "license": "MIT",
+    "bin": {
+        "gencli": "index.js",
+        "ncli": "index.js"
+    },
+    "author": {
+        "name": "atxpaul",
+        "email": "pablo.pan.veira@gmail.com",
+        "url": ""
+    },
+    "dependencies": {
+        "atx-alerts": "^1.0.1",
+        "await-to-js": "^2.1.1",
+        "chalk": "^4.1.0",
+        "cli-handle-error": "^4.4.0",
+        "cli-handle-unhandled": "^1.1.1",
+        "cli-welcome": "^2.2.2",
+        "copy-template-dir": "^1.4.0",
+        "enquirer": "^2.3.6"
+    }
+}
