@@ -3,6 +3,7 @@ const copy=require('copy-template-dir');
 const {green: g, dim:d} = require('chalk');
 const alert=require('atx-alerts');
 const questions=require('./questions');
+const execa=require('execa');
 
 module.exports=async()=>{
     const vars=await questions();
@@ -11,7 +12,7 @@ module.exports=async()=>{
     const outDirPath=path.join(process.cwd(),outDir);
     
     
-    copy(inDirPath, outDirPath, vars, (err, createdFiles) => {
+    copy(inDirPath, outDirPath, vars, async(err, createdFiles) => {
         if (err) throw err
 
         console.log(d(`\nCreating files in ${g(`./${outDir}`)} directory:\n`))
@@ -20,6 +21,9 @@ module.exports=async()=>{
             const fileName=path.basename(filePath);
             console.log(`${g(`CREATED`)} ${fileName}`)
         })
+
+        process.chdir(outDirPath)
+        await execa(`npm`, [`dedupe`])
 
         alert({
             type:`success`,

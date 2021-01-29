@@ -3,14 +3,14 @@ const ask=require('./ask');
 
 
 module.exports=async()=>{
-    const name= await ask({message:`CLI name`,hint:`kebab-case only`,initial:`test`});
-    const command= await ask({message:`CLI command`,hint:`(optional: if different from CLI name)`,initial:`test`});
-    const description= await ask({message:`CLI description`});
-    const version= await ask({message:`CLI version`,initial:`0.0.1`});
-    const license= await ask({message:`CLI license`,initial:`UNLICENSED`});
-    const authorName= await ask({message:`CLI authorName`});
-    const authorEmail= await ask({message:`CLI authorEmail`});
-    const authorUrl= await ask({message:`CLI authorUrl`});
+    const name= await ask({name:`name`,message:`CLI name`,hint:`kebab-case only`,initial:`test`});
+    const command= await ask({name:`command`,message:`CLI command`,hint:`(optional: if different from CLI name)`});
+    const description= await ask({name:`description`,message:`CLI description`});
+    const version= await ask({name:`version`,message:`CLI version`,initial:`0.0.1`});
+    const license= await ask({name:`license`,message:`CLI license`,initial:`UNLICENSED`});
+    const authorName= await ask({name:`authorName`,message:`CLI authorName`});
+    const authorEmail= await ask({name:`authorEmail`,message:`CLI authorEmail`});
+    const authorUrl= await ask({name:`authorUrl`,message:`CLI authorUrl`});
     
     const vars={
         name,
