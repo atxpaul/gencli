@@ -1,9 +1,14 @@
 const path=require('path');
 const copy=require('copy-template-dir');
-const {green: g, dim:d} = require('chalk');
+const {green: g, dim:d, yellow:y} = require('chalk');
 const alert=require('atx-alerts');
-const questions=require('./questions');
 const execa=require('execa');
+const ora=require('ora');
+
+const questions=require('./questions');
+const {packages}=require('./packages');
+const spinner=ora({text:''})
+
 
 module.exports=async()=>{
     const vars=await questions();
@@ -22,8 +27,12 @@ module.exports=async()=>{
             console.log(`${g(`CREATED`)} ${fileName}`)
         })
 
+        console.log();
+        spinner.start(`${y(`Generating...`)}`)
         process.chdir(outDirPath)
         await execa(`npm`, [`dedupe`])
+        await execa(`npm`,[`install`,...packages])
+        spinner.succeed(`${g(`CLI Generated`)}`)
 
         alert({
             type:`success`,
