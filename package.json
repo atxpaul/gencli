@@ -1,5 +1,5 @@
 {
-    "name": "cli-automatic-generation",
+    "name": "atx-cli-generator",
     "description": "A CLI for generate CLIs",
     "version": "1.0.0",
     "license": "MIT",
