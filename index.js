@@ -20,6 +20,3 @@ const {clear,debug} = flags;
 
     
 })();
-
-
-
