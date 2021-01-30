@@ -24,7 +24,7 @@ const flags = {
 
 const commands = {
     help:{
-        description: `Print help info`
+        desc: `Print help info`
     }
 }
 
