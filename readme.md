@@ -1,4 +1,4 @@
-#`npx gencli`
+#`npx atx-cli-generator`
 
 You can create CLIs in seconds
 
@@ -7,13 +7,13 @@ You can create CLIs in seconds
 To use this CLI run the following command
 
 ```sh
-npx gencli
+npx atx-cli-generator
 ```
 
 You can also install globally and generate CLIs where you want
 
 ```sh
-npm i -g gencli
+npm i -g atx-cli-generator
 ```
 
-Just run gencli or ncli and the assistant will guide you with the process.
+Just run atx-cli-generator or ncli and the assistant will guide you with the process.

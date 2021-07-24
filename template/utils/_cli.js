@@ -10,7 +10,7 @@ const flags = {
     },
     debug:{
         type:`boolean`,
-        default:true,
+        default:false,
         alias:`d`,
         desc:`Print debug info`
     },
@@ -24,7 +24,7 @@ const flags = {
 
 const commands = {
     help:{
-        description: `Print help info`
+        desc: `Print help info`
     }
 }
 
