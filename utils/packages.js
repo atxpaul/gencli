@@ -1,5 +1,5 @@
 const packages = [
-    `meow`,
+    `meow@9.0.0`,
     `chalk`,
     `atx-alerts`,
     `cli-welcome`,
